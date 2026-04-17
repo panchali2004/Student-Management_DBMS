@@ -209,21 +209,3 @@ mysql> desc result;
 
 
 
-mysql> create table user(
-    -> User_Id varchar(15) primary key,
-    -> User_Name varchar(100),
-    -> Password varchar(15),
-    -> Role varchar(15)
-    -> );
-Query OK, 0 rows affected (0.03 sec)
-
-mysql> desc user;
-+-----------+--------------+------+-----+---------+-------+
-| Field     | Type         | Null | Key | Default | Extra |
-+-----------+--------------+------+-----+---------+-------+
-| User_Id   | varchar(15)  | NO   | PRI | NULL    |       |
-| User_Name | varchar(100) | YES  |     | NULL    |       |
-| Password  | varchar(15)  | YES  |     | NULL    |       |
-| Role      | varchar(15)  | YES  |     | NULL    |       |
-+-----------+--------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
