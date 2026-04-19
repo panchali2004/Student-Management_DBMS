@@ -233,3 +233,29 @@ mysql> create table dean(
 Query OK, 0 rows affected (0.04 sec)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
