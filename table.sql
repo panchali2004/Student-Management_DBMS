@@ -122,5 +122,36 @@ mysql> create table marks(
 Query OK, 0 rows affected (0.10 sec)
 
 
+mysql> create table result(
+    -> RegNo varchar(15),
+    -> Course_Code varchar(15),
+    -> GPA decimal(3,2),
+    -> Grade char
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+
+
+
+mysql> create table attendance(
+    -> RegNo varchar(15),
+    -> Course_Code varchar(15),
+    -> Date date,
+    -> State varchar(10)
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+
+
+
+mysql> create table medical(
+    -> RegNo varchar(15),
+    -> Status varchar(50),
+    -> Description varchar(15),
+    -> Start_Date date,
+    -> End_Date date
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
 
 
