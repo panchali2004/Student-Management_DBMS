@@ -13,6 +13,7 @@ Query OK, 0 rows affected (0.05 sec)
 
 mysql> create table user_contact(
     -> Contact_no varchar(15)
+    -> NIC varchar(15),
     -> );
 Query OK, 0 rows affected (0.06 sec)
 
