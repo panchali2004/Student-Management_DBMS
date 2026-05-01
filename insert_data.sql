@@ -15,17 +15,18 @@ INSERT INTO user VALUES
 ('198501300013','Praveen','Fernando','1985-01-13','praveen@gmail.com','Kandy','M'),
 ('197802300014','Sachini','Jayasinghe','1978-02-14','sachini@gmail.com','Matara','F'),
 ('198203300015','Kavindu','Peris','1982-03-15','kavindu@gmail.com','Negombo','M'),
-('200504300016','Hasini','Wickramasinghe','2000-04-16','hasini@gmail.com','Kurunegala','F'),
-('200605300017','Gayan','Gunawardena','2000-05-17','gayan@gmail.com','Gampaha','M'),
-('200706300018','Nishadi','DeSilva','2000-06-18','nishadi@gmail.com','Kalutara','F'),
-('200807300019','Ramesh','Madushan','2000-07-19','ramesh@gmail.com','Anuradhapura','M'),
-('200908300020','Piumi','Fernando','2000-08-20','piumi@gmail.com','Badulla','F'),
+('200504300016','Hasini','Wickramasinghe','2005-04-16','hasini@gmail.com','Kurunegala','F'),
+('200005300017','Gayan','Gunawardena','2000-05-17','gayan@gmail.com','Gampaha','M'),
+('200406300018','Nishadi','DeSilva','2004-06-18','nishadi@gmail.com','Kalutara','F'),
+('200407300019','Ramesh','Madushan','2004-07-19','ramesh@gmail.com','Anuradhapura','M'),
+('200408300020','Piumi','Fernando','2004-08-20','piumi@gmail.com','Badulla','F'),
 
 ('200009300021','Thilina','Perera','2000-09-21','thilina@gmail.com','Colombo','M'),
-('200110300022','Chathuri','Silva','2000-10-22','chathuri@gmail.com','Galle','F'),
-('200211300023','Dinesh','Fernando','2000-11-23','dinesh@gmail.com','Kandy','M'),
-('200312300024','Iresha','Jayasinghe','2000-12-24','iresha@gmail.com','Matara','F'),
-('200001300025','Sajith','Peris','2000-01-25','sajith@gmail.com','Negombo','M');
+('200110300022','Chathuri','Silva','2001-10-22','chathuri@gmail.com','Galle','F'),
+('200211300023','Dinesh','Fernando','2002-11-23','dinesh@gmail.com','Kandy','M'),
+('200312300024','Iresha','Jayasinghe','2003-12-24','iresha@gmail.com','Matara','F'),
+('200001300025','Sajith','Peris','2000-01-25','sajith@gmail.com','Negombo','M'),
+('200401300026','Navindu','Peris','2004-01-25','navindu@gmail.com','Negombo','M');
 
 
 
@@ -78,17 +79,17 @@ INSERT INTO user_contact VALUES
 ('0771000016','200504300016'),
 ('0711000016','200504300016'),
 
-('0771000017','200405300017'),
-('0721000017','200405300017'),
+('0771000017','200005300017'),
+('0721000017','200005300017'),
 
-('0771000018','200306300018'),
-('0751000018','200306300018'),
+('0771000018','200406300018'),
+('0751000018','200406300018'),
 
 ('0771000019','200407300019'),
 ('0761000019','200407300019'),
 
-('0771000020','200308300020'),
-('0781000020','200908300020'),
+('0771000020','200408300020'),
+('0781000020','200408300020'),
 
 ('0771000021','200009300021'),
 ('0711000021','200009300021'),
@@ -110,13 +111,13 @@ INSERT INTO user_contact VALUES
 INSERT INTO admin VALUES ('197511300011');
 
 
-INSERT INTO dean VALUES ('197812300012');
+INSERT INTO dean VALUES ('198004300004');
 
 
 INSERT INTO department VALUES
-('D01','Information Technology','198501300013'),
-('D02','Engineering','197802300014'),
-('D03','Business Management','198203300015');
+('D01','Information Technology','199110300010'),
+('D02','Engineering','198909300009'),
+('D03','Business Management','197807300007');
 
 
 
@@ -148,11 +149,11 @@ INSERT INTO lec_qualification VALUES
 
 
 INSERT INTO technical_officer VALUES
-('TO01','D01','200011300011'),
-('TO02','D01','200112300012'),
-('TO03','D02','200201300013'),
-('TO04','D02','200302300014'),
-('TO05','D03','200403300015');
+('TO01','D01','197812300012'),
+('TO02','D01','198501300013'),
+('TO03','D02','197802300014'),
+('TO04','D02','198203300015'),
+('TO05','D03','200005300017');
 
 
 
@@ -166,16 +167,16 @@ INSERT INTO tec_assignlab VALUES
 
 
 INSERT INTO student VALUES
-('TG/2024/0001','D01','200012300001','Active'),
-('TG/2024/0002','D01','200102300002','Active'),
-('TG/2024/0003','D02','200203300003','Active'),
-('TG/2024/0004','D02','200304300004','Active'),
-('TG/2024/0005','D03','200405300005','Active'),
-('TG/2024/0006','D03','200506300006','Active'),
-('TG/2024/0007','D01','200607300007','Active'),
-('TG/2024/0008','D02','200708300008','Active'),
-('TG/2024/0009','D03','200809300009','Active'),
-('TG/2024/0010','D01','200910300010','Active');
+('TG/2024/0001','D01','200504300016','Active'),
+('TG/2024/0002','D01','200406300018','Active'),
+('TG/2024/0003','D02','200407300019','Active'),
+('TG/2024/0004','D02','200408300020','Active'),
+('TG/2024/0005','D03','200009300021','Active'),
+('TG/2024/0006','D03','200110300022','Active'),
+('TG/2024/0007','D01','200211300023','Active'),
+('TG/2024/0008','D02','200312300024','Active'),
+('TG/2024/0009','D03','200001300025','Active'),
+('TG/2024/0010','D01','200401300026','Active');
 
 
 INSERT INTO course VALUES
