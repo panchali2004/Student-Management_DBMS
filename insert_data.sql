@@ -10,11 +10,11 @@ INSERT INTO user VALUES
 ('198909300009','Ishara','Madushan','1989-09-09','ishara@gmail.com','Anuradhapura','M'),
 ('199110300010','Sanduni','Fernando','1991-10-10','sanduni@gmail.com','Badulla','F'),
 
-('200011300011','Supun','Perera','2000-11-11','supun@gmail.com','Colombo','M'),
-('200112300012','Nadeesha','Silva','2000-12-12','nadeesha@gmail.com','Galle','F'),
-('200201300013','Praveen','Fernando','2000-01-13','praveen@gmail.com','Kandy','M'),
-('200302300014','Sachini','Jayasinghe','2000-02-14','sachini@gmail.com','Matara','F'),
-('200403300015','Kavindu','Peris','2000-03-15','kavindu@gmail.com','Negombo','M'),
+('197511300011','Supun','Perera','1975-11-11','supun@gmail.com','Colombo','M'),
+('197812300012','Nadeesha','Silva','1978-12-12','nadeesha@gmail.com','Galle','M'),
+('198501300013','Praveen','Fernando','1985-01-13','praveen@gmail.com','Kandy','M'),
+('197802300014','Sachini','Jayasinghe','1978-02-14','sachini@gmail.com','Matara','F'),
+('198203300015','Kavindu','Peris','1982-03-15','kavindu@gmail.com','Negombo','M'),
 ('200504300016','Hasini','Wickramasinghe','2000-04-16','hasini@gmail.com','Kurunegala','F'),
 ('200605300017','Gayan','Gunawardena','2000-05-17','gayan@gmail.com','Gampaha','M'),
 ('200706300018','Nishadi','DeSilva','2000-06-18','nishadi@gmail.com','Kalutara','F'),
@@ -60,20 +60,20 @@ INSERT INTO user_contact VALUES
 ('0771000010','199110300010'),
 ('0781000010','199110300010'),
 
-('0771000011','200411300011'),
-('0711000011','200411300011'),
+('0771000011','197511300011'),
+('0711000011','197511300011'),
 
-('0771000012','200112300012'),
-('0721000012','200112300012'),
+('0771000012','197812300012'),
+('0721000012','197812300012'),
 
-('0771000013','200201300013'),
-('0751000013','200201300013'),
+('0771000013','198501300013'),
+('0751000013','198501300013'),
 
-('0771000014','200302300014'),
-('0761000014','200302300014'),
+('0771000014','197802300014'),
+('0761000014','197802300014'),
 
-('0771000015','200403300015'),
-('0781000015','200403300015'),
+('0771000015','198203300015'),
+('0781000015','198203300015'),
 
 ('0771000016','200504300016'),
 ('0711000016','200504300016'),
@@ -107,16 +107,16 @@ INSERT INTO user_contact VALUES
 
 
 
-INSERT INTO admin VALUES ('200012300001');
+INSERT INTO admin VALUES ('197511300011');
 
 
-INSERT INTO dean VALUES ('200102300002');
+INSERT INTO dean VALUES ('197812300012');
 
 
 INSERT INTO department VALUES
-('D01','Information Technology','200012300001'),
-('D02','Engineering','200203300003'),
-('D03','Business Management','200405300005');
+('D01','Information Technology','198501300013'),
+('D02','Engineering','197802300014'),
+('D03','Business Management','198203300015');
 
 
 
