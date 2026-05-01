@@ -109,7 +109,6 @@ Query OK, 0 rows affected (0.04 sec)
 
 
 mysql> create table marks(
-    -> Mark_Id varchar(15) primary key,
     -> RegNo varchar(15),
     -> Course_Code varchar(15),
     -> First_Quiz_Marks decimal(3,2),

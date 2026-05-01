@@ -1,32 +1,32 @@
 INSERT INTO user VALUES
-('199812300001','Nimal','Perera','1998-01-01','nimal@gmail.com','Colombo','M'),
-('200002300002','Ama','Silva','2000-02-02','ama@gmail.com','Galle','F'),
-('199003300003','Kasun','Fernando','1990-03-03','kasun@gmail.com','Kandy','M'),
-('198004300004','Saman','Jayasinghe','1980-04-04','saman@gmail.com','Matara','M'),
-('199505300005','Dilani','Peris','1995-05-05','dilani@gmail.com','Negombo','F'),
-('198506300006','Chamara','Wickramasinghe','1985-06-06','chamara@gmail.com','Kurunegala','M'),
-('197807300007','Tharushi','Gunawardena','1978-07-07','tharushi@gmail.com','Gampaha','F'),
-('200008300008','Ruwan','DeSilva','2000-08-08','ruwan@gmail.com','Kalutara','M'),
-('198909300009','Ishara','Madushan','1989-09-09','ishara@gmail.com','Anuradhapura','M'),
-('199110300010','Sanduni','Fernando','1991-10-10','sanduni@gmail.com','Badulla','F'),
+('199812300001','Nimal','Perera','1998-01-01','nimal@gmail.com','Colombo','Male'),
+('200002300002','Ama','Silva','2000-02-02','ama@gmail.com','Galle','Female'),
+('199003300003','Kasun','Fernando','1990-03-03','kasun@gmail.com','Kandy','Male'),
+('198004300004','Saman','Jayasinghe','1980-04-04','saman@gmail.com','Matara','Male'),
+('199505300005','Dilani','Peris','1995-05-05','dilani@gmail.com','Negombo','Female'),
+('198506300006','Chamara','Wickramasinghe','1985-06-06','chamara@gmail.com','Kurunegala','Male'),
+('197807300007','Tharushi','Gunawardena','1978-07-07','tharushi@gmail.com','Gampaha','Female'),
+('200008300008','Ruwan','DeSilva','2000-08-08','ruwan@gmail.com','Kalutara','Male'),
+('198909300009','Ishara','Madushan','1989-09-09','ishara@gmail.com','Anuradhapura','Male'),
+('199110300010','Sanduni','Fernando','1991-10-10','sanduni@gmail.com','Badulla','Female'),
 
-('197511300011','Supun','Perera','1975-11-11','supun@gmail.com','Colombo','M'),
-('197812300012','Nadeesha','Silva','1978-12-12','nadeesha@gmail.com','Galle','M'),
-('198501300013','Praveen','Fernando','1985-01-13','praveen@gmail.com','Kandy','M'),
-('197802300014','Sachini','Jayasinghe','1978-02-14','sachini@gmail.com','Matara','F'),
-('198203300015','Kavindu','Peris','1982-03-15','kavindu@gmail.com','Negombo','M'),
-('200504300016','Hasini','Wickramasinghe','2005-04-16','hasini@gmail.com','Kurunegala','F'),
-('200005300017','Gayan','Gunawardena','2000-05-17','gayan@gmail.com','Gampaha','M'),
-('200406300018','Nishadi','DeSilva','2004-06-18','nishadi@gmail.com','Kalutara','F'),
-('200407300019','Ramesh','Madushan','2004-07-19','ramesh@gmail.com','Anuradhapura','M'),
-('200408300020','Piumi','Fernando','2004-08-20','piumi@gmail.com','Badulla','F'),
+('197511300011','Supun','Perera','1975-11-11','supun@gmail.com','Colombo','Male'),
+('197812300012','Nadeesha','Silva','1978-12-12','nadeesha@gmail.com','Galle','Male'),
+('198501300013','Praveen','Fernando','1985-01-13','praveen@gmail.com','Kandy','Mmale'),
+('197802300014','Sachini','Jayasinghe','1978-02-14','sachini@gmail.com','Matara','Female'),
+('198203300015','Kavindu','Peris','1982-03-15','kavindu@gmail.com','Negombo','Male'),
+('200504300016','Hasini','Wickramasinghe','2005-04-16','hasini@gmail.com','Kurunegala','Female'),
+('200005300017','Gayan','Gunawardena','2000-05-17','gayan@gmail.com','Gampaha','Male'),
+('200406300018','Nishadi','DeSilva','2004-06-18','nishadi@gmail.com','Kalutara','Female'),
+('200407300019','Ramesh','Madushan','2004-07-19','ramesh@gmail.com','Anuradhapura','Male'),
+('200408300020','Piumi','Fernando','2004-08-20','piumi@gmail.com','Badulla','Female'),
 
-('200009300021','Thilina','Perera','2000-09-21','thilina@gmail.com','Colombo','M'),
-('200110300022','Chathuri','Silva','2001-10-22','chathuri@gmail.com','Galle','F'),
-('200211300023','Dinesh','Fernando','2002-11-23','dinesh@gmail.com','Kandy','M'),
-('200312300024','Iresha','Jayasinghe','2003-12-24','iresha@gmail.com','Matara','F'),
-('200001300025','Sajith','Peris','2000-01-25','sajith@gmail.com','Negombo','M'),
-('200401300026','Navindu','Peris','2004-01-25','navindu@gmail.com','Negombo','M');
+('200009300021','Thilina','Perera','2000-09-21','thilina@gmail.com','Colombo','Male'),
+('200110300022','Chathuri','Silva','2001-10-22','chathuri@gmail.com','Galle','Female'),
+('200211300023','Dinesh','Fernando','2002-11-23','dinesh@gmail.com','Kandy','Male'),
+('200312300024','Iresha','Jayasinghe','2003-12-24','iresha@gmail.com','Matara','Female'),
+('200001300025','Sajith','Peris','2000-01-25','sajith@gmail.com','Negombo','Male'),
+('200401300026','Navindu','Peris','2004-01-25','navindu@gmail.com','Negombo','Male');
 
 
 
@@ -117,7 +117,7 @@ INSERT INTO dean VALUES ('198004300004');
 INSERT INTO department VALUES
 ('D01','Information Technology','199110300010'),
 ('D02','Engineering','198909300009'),
-('D03','Business Management','197807300007');
+('D03','Bio System','197807300007');
 
 
 
@@ -158,39 +158,39 @@ INSERT INTO technical_officer VALUES
 
 
 INSERT INTO tec_assignlab VALUES
-('TO01','Lab A'),
-('TO02','Lab B'),
-('TO03','Lab C'),
-('TO04','Lab D'),
+('TO01','Lab 11'),
+('TO02','Lab 12'),
+('TO03','LH 250'),
+('TO04','7001'),
 ('TO05','Lab E');
 
 
 
 INSERT INTO student VALUES
-('TG/2024/0001','D01','200504300016','Active'),
-('TG/2024/0002','D01','200406300018','Active'),
-('TG/2024/0003','D02','200407300019','Active'),
-('TG/2024/0004','D02','200408300020','Active'),
-('TG/2024/0005','D03','200009300021','Active'),
-('TG/2024/0006','D03','200110300022','Active'),
-('TG/2024/0007','D01','200211300023','Active'),
-('TG/2024/0008','D02','200312300024','Active'),
-('TG/2024/0009','D03','200001300025','Active'),
-('TG/2024/0010','D01','200401300026','Active');
+('TG/2024/0001','D01','200504300016','Proper'),
+('TG/2024/0002','D01','200406300018','Repeat'),
+('TG/2024/0003','D02','200407300019','Proper'),
+('TG/2024/0004','D02','200408300020','Proper'),
+('TG/2024/0005','D03','200009300021','Suspended'),
+('TG/2024/0006','D03','200110300022','Proper'),
+('TG/2024/0007','D01','200211300023','Repeat'),
+('TG/2024/0008','D02','200312300024','Proper'),
+('TG/2024/0009','D03','200001300025','Proper'),
+('TG/2024/0010','D01','200401300026','Repeat');
 
 
 INSERT INTO course VALUES
-('C001','D01','Database Systems','Core',3),
-('C002','D01','Programming','Core',4),
-('C003','D01','Networking','Core',3),
+('C001','D01','Database Systems','Practical',3),
+('C002','D01','Programming','Practical',4),
+('C003','D01','Networking','Theory',3),
 
-('C004','D02','Mechanical','Core',3),
-('C005','D02','Electrical','Core',4),
-('C006','D02','Thermodynamics','Core',3),
+('C004','D02','Mechanical','Practical',3),
+('C005','D02','Electrical','Practical',4),
+('C006','D02','Thermodynamics','Theory',3),
 
-('C007','D03','Accounting','Core',3),
-('C008','D03','Marketing','Core',3),
-('C009','D03','Management','Core',4);
+('C007','D03','Accounting','Theory',3),
+('C008','D03','Marketing','Theory',3),
+('C009','D03','Management','Practical',4);
 
 
 INSERT INTO lectures VALUES
@@ -219,16 +219,16 @@ INSERT INTO enroll VALUES
 
 
 INSERT INTO marks VALUES
-('M001','TG/2024/0001','C001',65,70,75,80,85,78,82),
-('M002','TG/2024/0002','C002',55,60,58,65,68,62,66),
-('M003','TG/2024/0003','C004',70,75,80,78,82,85,88),
-('M004','TG/2024/0004','C005',60,65,68,72,70,66,69),
-('M005','TG/2024/0005','C007',75,78,80,85,88,82,86),
-('M006','TG/2024/0006','C008',50,55,52,60,62,58,61),
-('M007','TG/2024/0007','C003',68,70,72,74,76,73,75),
-('M008','TG/2024/0008','C006',80,85,88,90,92,89,91),
-('M009','TG/2024/0009','C009',62,65,64,66,68,67,69),
-('M010','TG/2024/0010','C001',58,60,59,62,64,61,63);
+('TG/2024/0001','C001',65,70,75,80,85,78,82),
+('TG/2024/0002','C002',55,60,58,65,68,62,66),
+('TG/2024/0003','C004',70,75,80,78,82,85,88),
+('TG/2024/0004','C005',60,65,68,72,70,66,69),
+('TG/2024/0005','C007',75,78,80,85,88,82,86),
+('TG/2024/0006','C008',50,55,52,60,62,58,61),
+('TG/2024/0007','C003',68,70,72,74,76,73,75),
+('TG/2024/0008','C006',80,85,88,90,92,89,91),
+('TG/2024/0009','C009',62,65,64,66,68,67,69),
+('TG/2024/0010','C001',58,60,59,62,64,61,63);
 
 
 INSERT INTO result VALUES
