@@ -137,7 +137,7 @@ mysql> create table attendance(
     -> RegNo varchar(15),
     -> Course_Code varchar(15),
     -> Date date,
-    -> State varchar(10)
+    -> Status varchar(10)
     -> );
 Query OK, 0 rows affected (0.04 sec)
 
