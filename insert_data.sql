@@ -822,3 +822,18 @@ INSERT INTO medical VALUES
 ('TG/2024/2062', 'TCS1212', 'Hospitalized', '2026-04-11', '2026-04-25', 'Approved'),
 ('TG/2024/2063', 'ICT1212', 'Medical leave', '2026-04-12', '2026-04-26', 'Approved'),
 ('TG/2024/2063', 'ICT1212', 'Injury', '2026-04-14', '2026-04-28', 'Pending');
+
+
+mysql> select *from medical;
++--------------+-------------+------------------+------------+------------+----------+
+| RegNo        | Course_Code | Description      | Start_Date | End_Date   | Status   |
++--------------+-------------+------------------+------------+------------+----------+
+| TG/2024/2063 | ENG1212     | Checkup          | 2026-01-28 | 2026-02-12 | Pending  |
+| TG/2024/2070 | TCS1212     | Medical leave    | 2026-02-02 | 2026-02-16 | Pending  |
+| TG/2024/2069 | ICT1241     | Surgery recovery | 2026-03-12 | 2026-03-26 | Approved |
+| TG/2024/2063 | ICT1252     | Headache         | 2026-03-13 | 2026-03-27 | Rejected |
+| TG/2024/2062 | TCS1212     | Hospitalized     | 2026-04-11 | 2026-04-25 | Approved |
+| TG/2024/2063 | ICT1212     | Medical leave    | 2026-04-12 | 2026-04-26 | Approved |
+| TG/2024/2063 | ICT1212     | Injury           | 2026-04-14 | 2026-04-28 | Pending  |
++--------------+-------------+------------------+------------+------------+----------+
+7 rows in set (0.23 sec)
