@@ -1,0 +1,95 @@
+In attendance recording tables there should be data  
+
+▪ to cover >= 80% students 
+          select * from attendance_eligibility where Attendance_Percentage >= 80.00;
+
+▪ < 80% students  
+          select * from attendance_eligibility where Attendance_Percentage < 80.00;
+
+▪ with medical >= 80% students 
+          select * from medical_attendance_eligibility where Attendance_Percentage >= 80.00;
+          
+select m.* from approved_medical_count a 
+inner join medical_attendance_eligibility m
+on a.RegNo=m.RegNo
+and a.Course_Code=m.Course_Code
+where m.Attendance_Percentage >= 80.00;
+
+▪ with medical < 80% students 
+          select * from medical_attendance_eligibility where Attendance_Percentage < 80.00;
+
+select m.* from approved_medical_count a 
+inner join medical_attendance_eligibility m
+on a.RegNo=m.RegNo
+and a.Course_Code=m.Course_Code
+where m.Attendance_Percentage < 80.00;
+
+
+
+
+There should be a way to view attendance details 
+
+as a summary for whole batch 
+• by giving the course code  
+o with registration nos, dates, percentage, and eligibility 
+▪ percentage >= 80 → eligible 
+• for all the subjects with percentage and eligibility  
+
+select * from attendance_eligibility where Course_Code="ENG1212";
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+| RegNo        | Course_Code | Present_Count | Absent_Count | Attendance_Percentage | Eligibility |
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+| TG/2024/2061 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2062 | ENG1212     |            14 |            1 |                 93.33 | Eligible    |
+| TG/2024/2063 | ENG1212     |            11 |            4 |                 73.33 | Not         |
+| TG/2024/2064 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2065 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2067 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2068 | ENG1212     |            14 |            1 |                 93.33 | Eligible    |
+| TG/2024/2069 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2070 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+10 rows in set (0.0069 sec)
+
+with date
+select a.RegNo, a.Course_Code, a.Date, e.Attendance_Percentage, e.Eligibility
+FROM attendance a
+inner join attendance_eligibility e
+on a.RegNo = e.RegNo 
+and a.Course_Code = e.Course_Code
+where a.Course_Code = "ENG1212";
+
+
+
+as individuals by giving the registration no 
+• as a summery for all the course units 
+
+select * from attendance_eligibility where RegNo="TG/2024/2066";
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+| RegNo        | Course_Code | Present_Count | Absent_Count | Attendance_Percentage | Eligibility |
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+| TG/2024/2066 | TCS1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ICT1261     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ICT1222     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ICT1232     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | TMS1233     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ENG1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ICT1212     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ICT1241     |            15 |            0 |                100.00 | Eligible    |
+| TG/2024/2066 | ICT1252     |            13 |            0 |                100.00 | Eligible    |
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+9 rows in set (0.0050 sec)
+
+
+
+as individuals by giving the registration no and course code 
+
+select * from attendance_eligibility where RegNo="TG/2024/2066" and Course_Code="ICT1241";
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+| RegNo        | Course_Code | Present_Count | Absent_Count | Attendance_Percentage | Eligibility |
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+| TG/2024/2066 | ICT1241     |            15 |            0 |                100.00 | Eligible    |
++--------------+-------------+---------------+--------------+-----------------------+-------------+
+1 row in set (0.0102 sec)
+
