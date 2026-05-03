@@ -111,13 +111,13 @@ Query OK, 0 rows affected (0.04 sec)
 mysql> create table marks(
     -> RegNo varchar(15),
     -> Course_Code varchar(15),
-    -> First_Quiz_Marks decimal(3,2),
-    -> Second_Quiz_Marks decimal(3,2),
-    -> Third_Quiz_Marks decimal(3,2),
-    -> First_Assignment_Marks decimal(3,2),
-    -> Second_Assignment_Marks decimal(3,2),
-    -> Mid_Exam_Marks decimal(3,2),
-    -> End_Exam_Marks decimal(3,2)
+    -> First_Quiz_Marks decimal(5,2),
+    -> Second_Quiz_Marks decimal(5,2),
+    -> Third_Quiz_Marks decimal(5,2),
+    -> First_Assignment_Marks decimal(5,2),
+    -> Second_Assignment_Marks decimal(5,2),
+    -> Mid_Exam_Marks decimal(5,2),
+    -> End_Exam_Marks decimal(5,2)
     -> );
 Query OK, 0 rows affected (0.10 sec)
 
