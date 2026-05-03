@@ -1,0 +1,40 @@
+--To get the top 2 marks from three quizzes marks--
+
+CREATE VIEW best_two_quiz_sum AS
+SELECT RegNo, Course_Code,
+(First_Quiz_Marks + Second_Quiz_Marks + Third_Quiz_Marks - 
+LEAST(First_Quiz_Marks, Second_Quiz_Marks, Third_Quiz_Marks)) 
+AS Best_Two_Total FROM marks;
+
+
+
+--To get the final CA mark (30%)--
+
+CREATE VIEW Final_CA_Marks AS
+SELECT b.RegNo, b.Course_Code, b.Best_Two_Total, m.First_Assignment_Marks, m.Second_Assignment_Marks, m.Mid_Exam_Marks, ROUND(((b.Best_Two_Total+m.First_Assignment_Marks+ m.Second_Assignment_Marks+ m.Mid_Exam_Marks)*30)/100/5, 2)
+AS Final_CA_Mark FROM best_two_quiz_sum b 
+INNER JOIN marks m 
+ON b.RegNo=m.RegNo
+AND b.Course_Code=m.Course_Code;
+
+
+
+--To get the eligibility for end semester exam--
+
+CREATE VIEW CA_Eligibility AS 
+SELECT Final_CA_Mark, 
+CASE WHEN Final_CA_Mark >= 20 THEN 'Eligible' ELSE 'NOT'
+END AS CA_Eligibility from Final_CA_Marks;
+
+
+
+--To get the final exam marks for result calculation--
+
+CREATE VIEW Final_Mark AS 
+SELECT f.RegNo, f.Course_Code, f.Final_CA_Mark, m.End_Exam_Marks, 
+ROUND((m.End_Exam_Marks * 70) / 100, 2)  AS "End Exam Marks (70%)",
+ROUND(f.Final_CA_Mark+((m.End_Exam_Marks * 70) / 100), 2) AS Final_Mark 
+FROM Final_CA_Marks f
+INNER JOIN marks m
+ON f.RegNo=m.RegNo
+AND f.Course_Code=m.Course_Code;
