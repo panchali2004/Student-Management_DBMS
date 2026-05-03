@@ -144,14 +144,17 @@ Query OK, 0 rows affected (0.04 sec)
 
 
 
-mysql> create table medical(
-    -> RegNo varchar(15),
-    -> Status varchar(50),
-    -> Description varchar(15),
-    -> Start_Date date,
-    -> End_Date date
-    -> );
-Query OK, 0 rows affected (0.04 sec)
+CREATE TABLE medical( 
+RegNo VARCHAR(15), 
+Course_Code VARCHAR(15), 
+Description VARCHAR(50), 
+Start_Date DATE, 
+End_Date DATE, 
+Status VARCHAR(10), 
+CHECK (Status IN ('Approved', 'Rejected', 'Pending'))
+);
+
+
 
 
 
