@@ -22,7 +22,7 @@ AND b.Course_Code=m.Course_Code;
 --To get the eligibility for end semester exam--
 
 CREATE VIEW CA_Eligibility AS 
-SELECT Final_CA_Mark, 
+SELECT RegNo, Course_Code, Final_CA_Mark, 
 CASE WHEN Final_CA_Mark >= 20 THEN 'Eligible' ELSE 'NOT'
 END AS CA_Eligibility from Final_CA_Marks;
 
@@ -38,3 +38,27 @@ FROM Final_CA_Marks f
 INNER JOIN marks m
 ON f.RegNo=m.RegNo
 AND f.Course_Code=m.Course_Code;
+
+
+
+--To get the eligibility for End Exam--
+CREATE VIEW End_Exam_Eligibility AS
+SELECT m.RegNo, m.Course_Code, m.Eligibility AS Attendance_Eligibility, c.CA_Eligibility,
+CASE 
+WHEN m.Eligibility ="Eligible"
+AND c.CA_Eligibility ="Eligible"
+THEN 'EL'
+WHEN m.Eligibility <> 'Eligible' 
+AND c.CA_Eligibility = 'Eligible'
+THEN 'NE'
+WHEN m.Eligibility = 'Eligible' 
+AND c.CA_Eligibility <> 'Eligible'
+THEN 'NE*'
+WHEN m.Eligibility <> 'Eligible' 
+AND c.CA_Eligibility <> 'Eligible'
+THEN 'NE**'
+END AS End_Exam_Eligibility
+FROM medical_attendance_eligibility m
+INNER JOIN CA_Eligibility c
+ON m.RegNo = c.RegNo
+AND m.Course_Code = c.Course_Code;

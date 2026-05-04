@@ -74,3 +74,16 @@ o As individuals
 
 • There should be a way to see if student/s are eligible according to the criteria of CA to sit for the final exam 
           select * from CA_Eligibility;
+
+
+• There should be a way to check eligibility (attendance +  CA marks) as individuals and for the 
+whole batch 
+          select * from End_Exam_Eligibility;
+
+
+
+
+
+
+
+
