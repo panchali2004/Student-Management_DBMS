@@ -1,0 +1,106 @@
+--To see the Grades--
+
+CREATE VIEW Final_Grades AS
+SELECT RegNo, Course_Code, Final_Mark,
+CASE
+WHEN Final_Mark >= 85 THEN 'A+'
+WHEN Final_Mark >= 75 THEN 'A'
+WHEN Final_Mark >= 70 THEN 'A-'
+WHEN Final_Mark >= 65 THEN 'B+'
+WHEN Final_Mark >= 60 THEN 'B'
+WHEN Final_Mark >= 55 THEN 'B-'
+WHEN Final_Mark >= 50 THEN 'C+'
+WHEN Final_Mark >= 45 THEN 'C'
+WHEN Final_Mark >= 40 THEN 'C-'
+WHEN Final_Mark >= 35 THEN 'D'
+ELSE 'E'
+END AS Grade
+FROM Final_Mark;
+
+
+
+--To see Grades without SGPA and CGPA column--
+
+CREATE VIEW L1_S2_Grades AS
+SELECT f.RegNo,
+MAX(CASE WHEN Course_Code = 'ICT1212' THEN Grade END) AS ICT1212,
+MAX(CASE WHEN Course_Code = 'ICT1222' THEN Grade END) AS ICT1222,
+MAX(CASE WHEN Course_Code = 'ICT1232' THEN Grade END) AS ICT1232,
+MAX(CASE WHEN Course_Code = 'ICT1241' THEN Grade END) AS ICT1241,
+MAX(CASE WHEN Course_Code = 'ICT1252' THEN Grade END) AS ICT1252,
+MAX(CASE WHEN Course_Code = 'ICT1261' THEN Grade END) AS ICT1261,
+MAX(CASE WHEN Course_Code = 'TCS1212' THEN Grade END) AS TCS1212,
+MAX(CASE WHEN Course_Code = 'TMS1233' THEN Grade END) AS TMS1233,
+MAX(CASE WHEN Course_Code = 'ENG1212' THEN Grade END) AS ENG1212
+FROM Final_Grades f
+GROUP BY f.RegNo;
+
+
+
+
+--Calculate the SGPA--
+
+CREATE VIEW SGPA AS
+SELECT RegNo,
+ROUND(SUM((CAST(RIGHT(Course_Code,1) AS UNSIGNED)) *
+CASE
+WHEN Grade = 'A+' THEN 4.0
+WHEN Grade = 'A' THEN 4.0
+WHEN Grade = 'A-' THEN 3.7
+WHEN Grade = 'B+' THEN 3.3
+WHEN Grade = 'B' THEN 3.0
+WHEN Grade = 'B-' THEN 2.7
+WHEN Grade = 'C+' THEN 2.3
+WHEN Grade = 'C' THEN 2.0
+WHEN Grade = 'C-' THEN 1.7
+WHEN Grade = 'D' THEN 1.3
+ELSE 0.0
+END)/SUM(CAST(RIGHT(Course_Code,1) AS UNSIGNED)), 2) AS SGPA
+FROM Final_Grades
+GROUP BY RegNo;
+
+
+
+--To Get Level 1 Semester 1 Result Sheet--
+
+CREATE VIEW L1_S1_Results AS
+SELECT g.RegNo,
+MAX(CASE WHEN Course_Code = 'ENG1114' THEN Grade END) AS ENG1114,
+MAX(CASE WHEN Course_Code = 'ICT1112' THEN Grade END) AS ICT1112,
+MAX(CASE WHEN Course_Code = 'ICT1121' THEN Grade END) AS ICT1121,
+MAX(CASE WHEN Course_Code = 'ICT1132' THEN Grade END) AS ICT1132,
+MAX(CASE WHEN Course_Code = 'ICT1142' THEN Grade END) AS ICT1142,
+MAX(CASE WHEN Course_Code = 'ICT1152' THEN Grade END) AS ICT1152,
+MAX(CASE WHEN Course_Code = 'ICT1163' THEN Grade END) AS ICT1163,
+MAX(CASE WHEN Course_Code = 'TMS1113' THEN Grade END) AS TMS1113,
+MAX(s.SGPA) AS SGPA 
+FROM L1_S1_Grades g 
+LEFT JOIN L1_S1_SGPA s 
+ON g.RegNo = s.RegNo
+GROUP BY g.RegNo;
+
+
+
+
+--To Get Level 1 Semester 2 Result Sheet--
+
+CREATE VIEW L1_S2_Results AS
+SELECT f.RegNo,
+MAX(CASE WHEN Course_Code = 'ICT1212' THEN Grade END) AS ICT1212,
+MAX(CASE WHEN Course_Code = 'ICT1222' THEN Grade END) AS ICT1222,
+MAX(CASE WHEN Course_Code = 'ICT1232' THEN Grade END) AS ICT1232,
+MAX(CASE WHEN Course_Code = 'ICT1241' THEN Grade END) AS ICT1241,
+MAX(CASE WHEN Course_Code = 'ICT1252' THEN Grade END) AS ICT1252,
+MAX(CASE WHEN Course_Code = 'ICT1261' THEN Grade END) AS ICT1261,
+MAX(CASE WHEN Course_Code = 'TCS1212' THEN Grade END) AS TCS1212,
+MAX(CASE WHEN Course_Code = 'TMS1233' THEN Grade END) AS TMS1233,
+MAX(CASE WHEN Course_Code = 'ENG1212' THEN Grade END) AS ENG1212,
+MAX(s.SGPA) AS SGPA,
+ROUND(((SELECT SGPA FROM L1_S1_SGPA WHERE RegNo = f.RegNo)+MAX(s.SGPA)
+) / 2,2) AS CGPA
+FROM Final_Grades f
+LEFT JOIN SGPA s 
+ON f.RegNo = s.RegNo
+GROUP BY f.RegNo;
+
+
