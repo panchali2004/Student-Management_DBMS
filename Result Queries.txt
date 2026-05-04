@@ -1,0 +1,9 @@
+• There should be a way to see marks for each subject, student and as a whole batch 
+          select * from Final_Mark;
+
+• There should be a way to see Grades for each subject, student and as a whole batch 
+          select * from L1_S2_Grades;
+
+• There should be a way to see SGPA and CGPA with the subjects and grades for each student and 
+for the whole batch 
+          select * from L1_S2_Results;
