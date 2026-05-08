@@ -6,7 +6,6 @@ This project is a database-driven Management Information System (MIS) developed 
 The system is built by applying core and advanced Database Management System (DBMS) concepts to ensure accurate, secure, and efficient data handling.
 
 🔹 Features
-
 ✅ Student Information Management 
 ✅ Course & Lecturer Management 
 ✅ Attendance Tracking & Eligibility Checking 
