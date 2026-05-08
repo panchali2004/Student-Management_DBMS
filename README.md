@@ -15,6 +15,9 @@ The system is built by applying core and advanced Database Management System (DB
 ✅ SGPA & CGPA Calculation 
 ✅ Medical & Special Case Handling
 
+
+
+
 🔹 Advanced DBMS Concepts Used
 
 🔹 Views – For simplified and secure data retrieval 
@@ -25,27 +28,49 @@ The system is built by applying core and advanced Database Management System (DB
 🔹 Normalization – To reduce redundancy
 🔹 Security Features
 
+
+
 Role-based access control using MySQL user privileges:
 
-Admin – Full access with grant option Dean – Full access (no grant) Lecturer – Manage academic data Technical Officer – Attendance management Student – Read-only access for results
+Admin – Full access with grant option 
+Dean – Full access (no grant) 
+Lecturer – Manage academic data 
+Technical Officer – Attendance management 
+Student – Read-only access for results
+
+
 
 🔹 System Capabilities
 
 📊 Attendance percentage calculation with eligibility check
+
 📊 CA (Continuous Assessment) calculation 
+
 📊 Final marks and grade generation 
+
 📊 Individual & batch-wise reports 
+
 📊 Eligibility validation (Attendance + CA)
+
+
+
 
 🔹 Technologies Used
 
 MySQL SQL (DDL, DML, DCL)
 
+
+
 🔹 Database Design
 Relational database design
+
 ER/EER modeling
+
 Normalized table structures
+
 Proper use of primary keys & foreign keys
+
+
 
 🔹 Project Purpose
 The goal of this project is to demonstrate practical knowledge of DBMS concepts by developing a real-world academic management system with proper structure, security, and efficiency.
