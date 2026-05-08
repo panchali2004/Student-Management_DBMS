@@ -1,9 +1,15 @@
 • There should be a way to see marks for each subject, student and as a whole batch 
-          select * from Final_Mark;
+          CALL Get_Student_Marks('TG/2024/2066');
+          CALL Get_Subject_Marks('ICT1212');
+          CALL Get_Marks();
 
 • There should be a way to see Grades for each subject, student and as a whole batch 
+          CALL Get_Student_Grades('TG/2024/2070');
+          CALL Get_Course_Grades('TMS1233');
           select * from L1_S2_Grades;
 
 • There should be a way to see SGPA and CGPA with the subjects and grades for each student and 
 for the whole batch 
-          select * from L1_S2_Results;
+         CALL Get_Student_Result('TG/2024/2069');
+         CALL Get_Subject_Result('ICT1241');
+         select * from L1_S2_Results;
