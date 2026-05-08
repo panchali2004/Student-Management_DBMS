@@ -1,0 +1,138 @@
+--To get the marks of one student--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Student_Marks(IN student_regno VARCHAR(15))
+BEGIN
+SELECT * FROM Final_Mark 
+WHERE RegNo = student_regno;
+END //
+
+DELIMITER ;
+
+
+
+--To get the marks of all students for a course--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Subject_Marks(IN subject_code VARCHAR(15))
+BEGIN
+SELECT * FROM Final_Mark
+WHERE Course_Code = subject_code;
+END //
+
+DELIMITER ;
+
+
+
+--To get marks of whole batch--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Marks()
+BEGIN
+SELECT * FROM Final_Mark;
+END //
+
+DELIMITER ;
+
+
+
+
+
+--To get the grades of one student--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Student_Grades(IN student_regno VARCHAR(15))
+BEGIN
+SELECT * FROM L1_S2_Grades
+WHERE RegNo = student_regno;
+END //
+
+DELIMITER ;
+
+
+
+--To get the grades of all students for a course--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Course_Grades(IN subject_code VARCHAR(15))
+BEGIN
+SELECT RegNo, Course_Code, Grade
+FROM Final_Grades WHERE Course_Code = subject_code
+ORDER BY RegNo;
+END //
+
+DELIMITER ;
+
+
+
+
+--To get the results of one student--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Student_Result(IN student_regno VARCHAR(15))
+BEGIN
+SELECT * FROM L1_S2_Results
+WHERE RegNo = student_regno;
+END //
+
+DELIMITER ;
+
+
+
+--To get the results of all students for a course--
+
+DELIMITER //
+
+CREATE PROCEDURE Get_Subject_Result(IN subject_code VARCHAR(15))
+BEGIN
+SELECT RegNo, Course_Code, Final_Mark, Grade FROM Final_Grades
+WHERE Course_Code = subject_code;
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
