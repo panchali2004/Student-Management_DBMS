@@ -11,22 +11,35 @@ The system is built by applying core and advanced **Database Management System (
 🔹 Features
 
  ✅ Student Information Management
+
  ✅ Course & Lecturer Management
+ 
  ✅ Attendance Tracking & Eligibility Checking
+ 
  ✅ Marks Management (CA & Final)
+ 
  ✅ Grade Calculation & Result Processing
+ 
  ✅ SGPA & CGPA Calculation
+ 
  ✅ Medical & Special Case Handling
+
+
 
 
  🔹 Advanced DBMS Concepts Used
 
-🔹 **Views** – For simplified and secure data retrieval
-🔹 **Stored Procedures** – For reusable operations
-🔹 **Functions** – For calculations (marks, GPA, etc.)
-🔹 **Complex SQL Queries** – For data analysis and reporting
-🔹 **Constraints** – To maintain data integrity
-🔹 **Normalization** – To reduce redundancy
+✅ **Views** – For simplified and secure data retrieval
+
+✅ **Stored Procedures** – For reusable operations
+
+✅ **Functions** – For calculations (marks, GPA, etc.)
+
+✅ **Complex SQL Queries** – For data analysis and reporting
+
+✅ **Constraints** – To maintain data integrity
+
+✅ **Normalization** – To reduce redundancy
 
 
 
