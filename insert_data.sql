@@ -33,7 +33,7 @@ INSERT INTO user VALUES
 ('200208300030','Hiruni','Jayasinghe','2003-08-30','hiruni@gmail.com','Matara','Female'),
 ('200309300031','Vihanga','Peris','2002-09-30','vihanga@gmail.com','Negombo','Male');
 
-mysql> select * from user;
+
 +--------------+------------+----------------+---------------+--------------------+--------------+--------+
 | NIC          | First_Name | Last_Name      | Date_of_Birth | Email              | Address      | Gender |
 +--------------+------------+----------------+---------------+--------------------+--------------+--------+
@@ -69,7 +69,7 @@ mysql> select * from user;
 | 200408300020 | Piumi      | Fernando       | 2004-08-20    | piumi@gmail.com    | Badulla      | Female |
 | 200504300016 | Hasini     | Wickramasinghe | 2005-04-16    | hasini@gmail.com   | Kurunegala   | Female |
 +--------------+------------+----------------+---------------+--------------------+--------------+--------+
-31 rows in set (0.00 sec)
+
 
 
 
@@ -170,7 +170,7 @@ INSERT INTO user_contact VALUES
 ('0711000031','200309300031');
 
 
-mysql> select *from user_contact;
+
 +------------+--------------+
 | Contact_no | NIC          |
 +------------+--------------+
@@ -237,29 +237,32 @@ mysql> select *from user_contact;
 | 0771000031 | 200309300031 |
 | 0711000031 | 200309300031 |
 +------------+--------------+
-62 rows in set (0.17 sec)
-
-INSERT INTO admin VALUES ('197511300011');
-
-mysql> select *from admin;
-+--------------+
-| NIC          |
-+--------------+
-| 197511300011 |
-+--------------+
-1 row in set (0.00 sec)
 
 
+INSERT INTO admin
+ VALUES 
+ ('197511300011');
+
++----------+--------------+
+| Admin_ID | NIC          |
++----------+--------------+
+| A001     | 197511300011 |
++----------+--------------+
 
 
-INSERT INTO dean VALUES ('198004300004');
-mysql> select *from dean;
-+--------------+
-| NIC          |
-+--------------+
-| 198004300004 |
-+--------------+
-1 row in set (0.00 sec)
+
+
+
+INSERT INTO dean 
+VALUES 
+('198004300004');
+
++---------+--------------+
+| Dean_Id | NIC          |
++---------+--------------+
+| D_001   | 198004300004 |
++---------+--------------+
+
 
 
 INSERT INTO department VALUES
@@ -267,15 +270,15 @@ INSERT INTO department VALUES
 ('D02','Engineering','198909300009'),
 ('D03','Bio System','197807300007');
 
-mysql> select *from department;
+
 +--------+------------------------+--------------+
-| Dpt_id | Name                   | HOD          |
+| Dpt_Id | Name                   | HOD          |
 +--------+------------------------+--------------+
 | D01    | Information Technology | 199110300010 |
 | D02    | Engineering            | 198909300009 |
 | D03    | Bio System             | 197807300007 |
 +--------+------------------------+--------------+
-3 rows in set (0.00 sec)
+
 
 
 
@@ -291,7 +294,7 @@ INSERT INTO lecture VALUES
 ('L009','198909300009','D02'),
 ('L010','199110300010','D03');
 
-mysql> select *from lectures;
+
 +-------------+------------+
 | Course_Code | Lecture_Id |
 +-------------+------------+
@@ -305,7 +308,7 @@ mysql> select *from lectures;
 | TCS1212     | L007       |
 | TMS1233     | L008       |
 +-------------+------------+
-9 rows in set (0.00 sec)
+
 
 
 
@@ -322,7 +325,7 @@ INSERT INTO lec_qualification VALUES
 ('L009','MBA'),
 ('L010','BBA');
 
-mysql> select *from lec_qualification;
+
 +------------+--------------+
 | Lecture_Id | Qulification |
 +------------+--------------+
@@ -337,7 +340,7 @@ mysql> select *from lec_qualification;
 | L009       | MBA          |
 | L010       | BBA          |
 +------------+--------------+
-10 rows in set (0.00 sec)
+
 
 
 
@@ -350,7 +353,6 @@ INSERT INTO technical_officer VALUES
 ('TO05','D03','200005300017');
 
 
-mysql> select *from technical_officer;
 +-------+--------+--------------+
 | To_Id | Dpt_ID | NIC          |
 +-------+--------+--------------+
@@ -360,7 +362,7 @@ mysql> select *from technical_officer;
 | TO04  | D02    | 198203300015 |
 | TO05  | D03    | 200005300017 |
 +-------+--------+--------------+
-5 rows in set (0.00 sec)
+
 
 
 INSERT INTO tec_assignlab VALUES
@@ -371,7 +373,7 @@ INSERT INTO tec_assignlab VALUES
 ('TO05','Lab E');
 
 
-mysql> select *from tec_assignlab;
+
 +-------+--------------+
 | To_Id | Assigned_Lab |
 +-------+--------------+
@@ -381,7 +383,7 @@ mysql> select *from tec_assignlab;
 | TO04  | 7001         |
 | TO05  | Lab E        |
 +-------+--------------+
-5 rows in set (0.00 sec)
+
 
 
 
@@ -402,15 +404,15 @@ INSERT INTO student VALUES
 ('TG/2023/2013','D01','200208300030','Repeat'),
 ('TG/2023/2014','D01','200309300031','Repeat');
 
-mysql> select *from student;
+
 +--------------+--------+--------------+---------+
 | RegNo        | Dpt_Id | NIC          | Status  |
 +--------------+--------+--------------+---------+
-| TG/2024/2010 | D01    | 200205300027 | Repeat  |
-| TG/2024/2011 | D01    | 200206300028 | Repeat  |
-| TG/2024/2012 | D01    | 200307300029 | Repeat  |
-| TG/2024/2013 | D01    | 200208300030 | Repeat  |
-| TG/2024/2014 | D01    | 200309300031 | Repeat  |
+| TG/2023/2010 | D01    | 200205300027 | Repeat  |
+| TG/2023/2011 | D01    | 200206300028 | Repeat  |
+| TG/2023/2012 | D01    | 200307300029 | Repeat  |
+| TG/2023/2013 | D01    | 200208300030 | Repeat  |
+| TG/2023/2014 | D01    | 200309300031 | Repeat  |
 | TG/2024/2061 | D01    | 200504300016 | Proper  |
 | TG/2024/2062 | D01    | 200406300018 | Proper  |
 | TG/2024/2063 | D01    | 200407300019 | Proper  |
@@ -426,33 +428,32 @@ mysql> select *from student;
 
 
 
-IINSERT INTO course VALUES
+INSERT INTO course VALUES
 
-('ENG1212','ENG','ENG1212_ICT','Theory',2),
+('ENG1212','D01','ENG1212_ICT','Theory',2),
 
-('ICT1212','ICT','Database Management Systems','Theory',3),
-('ICT1222','ICT','Database Management Systems Practicum','Practical',3),
-('ICT1232','ICT','Web Development','Theory',3),
-('ICT1241','ICT','Web Development Practicum','Practical',3),
-('ICT1252','ICT','Operating Systems Concepts and Application','Theory',3),
-('ICT1261','ICT','System Programming Fundamentals Linux','Practical',3),
+('ICT1212','D01','Database Management Systems','Theory',3),
+('ICT1222','D01','Database Management Systems Practicum','Practical',3),
+('ICT1232','D01','Web Development','Theory',3),
+('ICT1241','D01','Web Development Practicum','Practical',3),
+('ICT1252','D01','Operating Systems Concepts and Application','Theory',3),
+('ICT1261','D01','System Programming Fundamentals Linux','Practical',3),
 
-('TCS1212','TCS','Fundamentals of Management','Theory',2),
-('TMS1233','TMS','Discrete Mathematics','Theory',3);
+('TCS1212','D01','Fundamentals of Management','Theory',2),
+('TMS1233','D01','Discrete Mathematics','Theory',3);
 
-mysql> select *from course;
 +-------------+--------+--------------------------------------------+-------------+---------+
 | Course_Code | Dpt_Id | Name                                       | Course_Type | Credits |
 +-------------+--------+--------------------------------------------+-------------+---------+
-| ENG1212     | ENG    | ENG1212_ICT                                | Theory      |       2 |
-| ICT1212     | ICT    | Database Management Systems                | Theory      |       3 |
-| ICT1222     | ICT    | Database Management Systems Practicum      | Practical   |       3 |
-| ICT1232     | ICT    | Web Development                            | Theory      |       3 |
-| ICT1241     | ICT    | Web Development Practicum                  | Practical   |       3 |
-| ICT1252     | ICT    | Operating Systems Concepts and Application | Theory      |       3 |
-| ICT1261     | ICT    | System Programming Fundamentals Linux      | Practical   |       3 |
-| TCS1212     | TCS    | Fundamentals of Management                 | Theory      |       2 |
-| TMS1233     | TMS    | Discrete Mathematics                       | Theory      |       3 |
+| ENG1212     | D01   | ENG1212_ICT                                | Theory      |       2 |
+| ICT1212     | D01    | Database Management Systems                | Theory      |       3 |
+| ICT1222     | D01    | Database Management Systems Practicum      | Practical   |       3 |
+| ICT1232     | D01    | Web Development                            | Theory      |       3 |
+| ICT1241     | D01    | Web Development Practicum                  | Practical   |       3 |
+| ICT1252     | D01    | Operating Systems Concepts and Application | Theory      |       3 |
+| ICT1261     | D01    | System Programming Fundamentals Linux      | Practical   |       3 |
+| TCS1212     | D01    | Fundamentals of Management                 | Theory      |       2 |
+| TMS1233     | D01    | Discrete Mathematics                       | Theory      |       3 |
 +-------------+--------+--------------------------------------------+-------------+---------+
 
 
@@ -468,7 +469,7 @@ INSERT INTO lectures VALUES
 ('TCS1212','L007'),
 ('TMS1233','L008');
 
-mysql> select *from lectures;
+
 +-------------+------------+
 | Course_Code | Lecture_Id |
 +-------------+------------+
@@ -482,7 +483,7 @@ mysql> select *from lectures;
 | TCS1212     | L007       |
 | TMS1233     | L008       |
 +-------------+------------+
-9 rows in set (0.00 sec)
+
 
 
 INSERT INTO enroll VALUES
@@ -596,15 +597,15 @@ INSERT INTO enroll VALUES
 ('TCS1212','TG/2024/2070'),
 ('TMS1233','TG/2024/2070'),
 
-('ICT1232','TG/2024/2010'),
-('ICT1261','TG/2024/2010'),
-('ICT1232','TG/2024/2011'),
-('ICT1241','TG/2024/2012'),
-('ICT1261','TG/2024/2013'),
-('ICT1241','TG/2024/2014'),
-('TMS1233','TG/2024/2015');
+('ICT1232','TG/2023/2010'),
+('ICT1261','TG/2023/2010'),
+('ICT1232','TG/2023/2011'),
+('ICT1241','TG/2023/2012'),
+('ICT1261','TG/2023/2013'),
+('ICT1241','TG/2023/2014');
 
-mysql> select *from enroll;
+
+
 +-------------+--------------+
 | Course_Code | RegNo        |
 +-------------+--------------+
@@ -698,15 +699,15 @@ mysql> select *from enroll;
 | ICT1261     | TG/2024/2070 |
 | TCS1212     | TG/2024/2070 |
 | TMS1233     | TG/2024/2070 |
-| ICT1232     | TG/2024/2010 |
-| ICT1261     | TG/2024/2010 |
-| ICT1232     | TG/2024/2011 |
-| ICT1241     | TG/2024/2012 |
-| ICT1261     | TG/2024/2013 |
-| ICT1241     | TG/2024/2014 |
-| TMS1233     | TG/2024/2015 |
+| ICT1232     | TG/2023/2010 |
+| ICT1261     | TG/2023/2010 |
+| ICT1232     | TG/2023/2011 |
+| ICT1241     | TG/2023/2012 |
+| ICT1261     | TG/2023/2013 |
+| ICT1241     | TG/2023/2014 |
+|    |  |
 +-------------+--------------+
-97 rows in set (0.03 sec)
+
 
 INSERT INTO marks VALUES
 
@@ -725,7 +726,7 @@ INSERT INTO marks VALUES
 ('TG/2024/2062','ICT1212',76,78,80,74,76,72,84),
 ('TG/2024/2062','ICT1222',82,85,88,80,82,78,55),
 ('TG/2024/2062','ICT1232',74,76,78,72,74,70,80),
-('TG/2024/2062','ICT1241',85,88,90,82,84,80,632),
+('TG/2024/2062','ICT1241',85,88,90,82,84,80,62),
 ('TG/2024/2062','ICT1252',78,80,82,76,78,54,85),
 ('TG/2024/2062','ICT1261',80,83,86,78,80,46,82),
 ('TG/2024/2062','TCS1212',72,74,76,70,72,68,0),
@@ -824,7 +825,7 @@ INSERT INTO medical VALUES
 ('TG/2024/2063', 'ICT1212', 'Injury', '2026-04-14', '2026-04-28', 'Pending');
 
 
-mysql> select *from medical;
+
 +--------------+-------------+------------------+------------+------------+----------+
 | RegNo        | Course_Code | Description      | Start_Date | End_Date   | Status   |
 +--------------+-------------+------------------+------------+------------+----------+
@@ -836,4 +837,143 @@ mysql> select *from medical;
 | TG/2024/2063 | ICT1212     | Medical leave    | 2026-04-12 | 2026-04-26 | Approved |
 | TG/2024/2063 | ICT1212     | Injury           | 2026-04-14 | 2026-04-28 | Pending  |
 +--------------+-------------+------------------+------------+------------+----------+
-7 rows in set (0.23 sec)
+
+
+
+INSERT INTO L1_S1_Grades (RegNo, Course_Code, Grade) VALUES
+
+('TG/2024/2061','ENG1114','A'),
+('TG/2024/2061','ICT1112','A'),
+('TG/2024/2061','ICT1121','A'),
+('TG/2024/2061','ICT1132','A-'),
+('TG/2024/2061','ICT1142','A'),
+('TG/2024/2061','ICT1152','A'),
+('TG/2024/2061','ICT1163','A+'),
+('TG/2024/2061','TMS1113','A'),
+
+('TG/2024/2062','ENG1114','B+'),
+('TG/2024/2062','ICT1112','A'),
+('TG/2024/2062','ICT1121','B'),
+('TG/2024/2062','ICT1132','A'),
+('TG/2024/2062','ICT1142','B+'),
+('TG/2024/2062','ICT1152','A'),
+('TG/2024/2062','ICT1163','A'),
+('TG/2024/2062','TMS1113','B+'),
+
+('TG/2024/2063','ENG1114','C'),
+('TG/2024/2063','ICT1112','B'),
+('TG/2024/2063','ICT1121','B'),
+('TG/2024/2063','ICT1132','B+'),
+('TG/2024/2063','ICT1142','C+'),
+('TG/2024/2063','ICT1152','B'),
+('TG/2024/2063','ICT1163','B'),
+('TG/2024/2063','TMS1113','B'),
+
+('TG/2024/2064','ENG1114','A'),
+('TG/2024/2064','ICT1112','B+'),
+('TG/2024/2064','ICT1121','A'),
+('TG/2024/2064','ICT1132','B'),
+('TG/2024/2064','ICT1142','A'),
+('TG/2024/2064','ICT1152','A-'),
+('TG/2024/2064','ICT1163','A'),
+('TG/2024/2064','TMS1113','B+'),
+
+('TG/2024/2065','ENG1114','B'),
+('TG/2024/2065','ICT1112','B'),
+('TG/2024/2065','ICT1121','B'),
+('TG/2024/2065','ICT1132','C+'),
+('TG/2024/2065','ICT1142','B'),
+('TG/2024/2065','ICT1152','B-'),
+('TG/2024/2065','ICT1163','B'),
+('TG/2024/2065','TMS1113','B'),
+
+('TG/2024/2066','ENG1114','C+'),
+('TG/2024/2066','ICT1112','B-'),
+('TG/2024/2066','ICT1121','B'),
+('TG/2024/2066','ICT1132','C+'),
+('TG/2024/2066','ICT1142','C'),
+('TG/2024/2066','ICT1152','B'),
+('TG/2024/2066','ICT1163','B-'),
+('TG/2024/2066','TMS1113','C+'),
+
+('TG/2024/2067','ENG1114','A'),
+('TG/2024/2067','ICT1112','A'),
+('TG/2024/2067','ICT1121','B+'),
+('TG/2024/2067','ICT1132','A'),
+('TG/2024/2067','ICT1142','A'),
+('TG/2024/2067','ICT1152','A'),
+('TG/2024/2067','ICT1163','A+'),
+('TG/2024/2067','TMS1113','A'),
+
+('TG/2024/2068','ENG1114','B'),
+('TG/2024/2068','ICT1112','B+'),
+('TG/2024/2068','ICT1121','B'),
+('TG/2024/2068','ICT1132','B'),
+('TG/2024/2068','ICT1142','C+'),
+('TG/2024/2068','ICT1152','B'),
+('TG/2024/2068','ICT1163','B'),
+('TG/2024/2068','TMS1113','B'),
+
+('TG/2024/2069','ENG1114','C'),
+('TG/2024/2069','ICT1112','C+'),
+('TG/2024/2069','ICT1121','C'),
+('TG/2024/2069','ICT1132','B-'),
+('TG/2024/2069','ICT1142','C'),
+('TG/2024/2069','ICT1152','B-'),
+('TG/2024/2069','ICT1163','C+'),
+('TG/2024/2069','TMS1113','C'),
+
+('TG/2024/2070','ENG1114','D'),
+('TG/2024/2070','ICT1112','C'),
+('TG/2024/2070','ICT1121','C-'),
+('TG/2024/2070','ICT1132','D'),
+('TG/2024/2070','ICT1142','C'),
+('TG/2024/2070','ICT1152','D'),
+('TG/2024/2070','ICT1163','C'),
+('TG/2024/2070','TMS1113','C-');
+
+
++--------------+---------+---------+---------+---------+---------+---------+---------+---------+------+
+| RegNo        | ENG1114 | ICT1112 | ICT1121 | ICT1132 | ICT1142 | ICT1152 | ICT1163 | TMS1113 | SGPA |
++--------------+---------+---------+---------+---------+---------+---------+---------+---------+------+
+| TG/2024/2061 | A       | A       | A       | A-      | A       | A       | A+      | A       | 3.93 |
+| TG/2024/2062 | B+      | A       | B       | A       | B+      | A       | A       | B+      | 3.47 |
+| TG/2024/2063 | C       | B       | B       | B+      | C+      | B       | B       | B       | 2.74 |
+| TG/2024/2064 | A       | B+      | A       | B       | A       | A-      | A       | B+      | 3.58 |
+| TG/2024/2065 | B       | B       | B       | C+      | B       | B-      | B       | B       | 2.68 |
+| TG/2024/2066 | C+      | B-      | B       | C+      | C       | B       | B-      | C+      | 2.32 |
+| TG/2024/2067 | A       | A       | B+      | A       | A       | A       | A+      | A       | 3.87 |
+| TG/2024/2068 | B       | B+      | B       | B       | C+      | B       | B       | B       | 2.79 |
+| TG/2024/2069 | C       | C+      | C       | B-      | C       | B-      | C+      | C       | 2.18 |
+| TG/2024/2070 | D       | C       | C-      | D       | C       | D       | C       | C-      | 1.68 |
++--------------+---------+---------+---------+---------+---------+---------+---------+---------+------+
+
+
+
+INSERT INTO L1_S1_SGPA (RegNo, SGPA) VALUES
+('TG/2024/2061',3.93),
+('TG/2024/2062',3.47),
+('TG/2024/2063',2.74),
+('TG/2024/2064',3.58),
+('TG/2024/2065',2.68),
+('TG/2024/2066',2.32),
+('TG/2024/2067',3.87),
+('TG/2024/2068',2.79),
+('TG/2024/2069',2.18),
+('TG/2024/2070',1.68);
+
+
++--------------+------+
+| RegNo        | SGPA |
++--------------+------+
+| TG/2024/2061 | 3.93 |
+| TG/2024/2062 | 3.47 |
+| TG/2024/2063 | 2.74 |
+| TG/2024/2064 | 3.58 |
+| TG/2024/2065 | 2.68 |
+| TG/2024/2066 | 2.32 |
+| TG/2024/2067 | 3.87 |
+| TG/2024/2068 | 2.79 |
+| TG/2024/2069 | 2.18 |
+| TG/2024/2070 | 1.68 |
++--------------+------+
