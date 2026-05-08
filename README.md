@@ -6,6 +6,8 @@ This project is a database-driven Management Information System (MIS) developed 
 The system is built by applying core and advanced Database Management System (DBMS) concepts to ensure accurate, secure, and efficient data handling.
 
 🔹 Features
+
+
 ✅ Student Information Management 
 
 ✅ Course & Lecturer Management 
@@ -27,25 +29,25 @@ The system is built by applying core and advanced Database Management System (DB
 
 🔹 Advanced DBMS Concepts Used
 
-🔹 Views – For simplified and secure data retrieval 
+✅ Views – For simplified and secure data retrieval 
 
-🔹 Stored Procedures – For reusable operations 
+✅ Stored Procedures – For reusable operations 
 
-🔹 Functions – For calculations (marks, GPA, etc.) 
+✅ Functions – For calculations (marks, GPA, etc.) 
 
-🔹 Complex SQL Queries – For data analysis and reporting 
+✅ Complex SQL Queries – For data analysis and reporting 
 
-🔹 Constraints – To maintain data integrity 
+✅ Constraints – To maintain data integrity 
 
-🔹 Normalization – To reduce redundancy
+✅ Normalization – To reduce redundancy
 
-🔹 Security Features
-
-
+✅ Security Features
 
 
 
-Role-based access control using MySQL user privileges:
+
+
+🔹 Role-based access control using MySQL user privileges:
 
 Admin – Full access with grant option 
 
