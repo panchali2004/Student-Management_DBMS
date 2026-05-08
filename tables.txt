@@ -1,0 +1,151 @@
+create database university;
+
+use university;
+
+CREATE TABLE users (
+                                             ->     NIC VARCHAR(15) PRIMARY KEY,
+                                             ->     First_Name VARCHAR(20),
+                                             ->     Last_Name VARCHAR(20),
+                                             ->     Date_of_Birth DATE,
+                                             ->     Email VARCHAR(100),
+                                             ->     Address VARCHAR(100),
+                                             ->     Gender VARCHAR(10)
+                                             -> );
+
+CREATE TABLE user_contact (
+                                             ->     Contact_no VARCHAR(15),
+                                             ->     NIC VARCHAR(15),
+                                             ->     FOREIGN KEY (NIC) REFERENCES users(NIC)
+                                             -> );
+
+ CREATE TABLE admin (
+                                             ->     NIC VARCHAR(15),
+                                             ->     FOREIGN KEY (NIC) REFERENCES users(NIC)
+                                             -> );
+
+CREATE TABLE dean (
+                                             ->     NIC VARCHAR(15),
+                                             ->     FOREIGN KEY (NIC) REFERENCES users(NIC)
+                                             -> );
+
+CREATE TABLE department (
+                                             ->     Dpt_Id VARCHAR(15) PRIMARY KEY,
+                                             ->     Name VARCHAR(30),
+                                             ->     HOD VARCHAR(15),
+                                             ->     FOREIGN KEY (HOD) REFERENCES users(NIC)
+                                             -> );
+
+CREATE TABLE lecturer (
+                                             ->     Lecture_Id VARCHAR(15) PRIMARY KEY,
+                                             ->     NIC VARCHAR(15),
+                                             ->     Dpt_Id VARCHAR(15),
+                                             ->     FOREIGN KEY (NIC) REFERENCES users(NIC),
+                                             ->     FOREIGN KEY (Dpt_Id) REFERENCES department(Dpt_Id)
+                                             -> );
+
+ CREATE TABLE lec_qualification (
+                                             ->     Lecture_Id VARCHAR(15),
+                                             ->     Qualification VARCHAR(50),
+                                             ->     FOREIGN KEY (Lecture_Id) REFERENCES lecturer(Lecture_Id)
+                                             -> );
+
+CREATE TABLE technical_officer (
+                                             ->     To_Id VARCHAR(15) PRIMARY KEY,
+                                             ->     Dpt_Id VARCHAR(15),
+                                             ->     NIC VARCHAR(15),
+                                             ->     FOREIGN KEY (NIC) REFERENCES users(NIC),
+                                             ->     FOREIGN KEY (Dpt_Id) REFERENCES department(Dpt_Id)
+                                             -> );
+
+CREATE TABLE tec_assignlab (
+
+                                             ->     To_Id VARCHAR(15),
+                                             ->     Assigned_Lab VARCHAR(20),
+                                             ->     FOREIGN KEY (To_Id) REFERENCES technical_officer(To_Id)
+                                             -> );
+
+CREATE TABLE student (
+                                             ->     RegNo VARCHAR(15) PRIMARY KEY,
+                                             ->     Dpt_Id VARCHAR(15),
+                                             ->     NIC VARCHAR(15),
+                                             ->     Status VARCHAR(15),
+                                             ->     FOREIGN KEY (NIC) REFERENCES users(NIC),
+                                             ->     FOREIGN KEY (Dpt_Id) REFERENCES department(Dpt_Id)
+                                             -> );
+
+ALTER TABLE student
+                                             -> MODIFY Status ENUM('Proper','Repeat','Suspended');
+
+CREATE TABLE course (
+                                             ->     Course_Code VARCHAR(15) PRIMARY KEY,
+                                             ->     Dpt_Id VARCHAR(15),
+                                             ->     Name VARCHAR(50),
+                                             ->     Course_Type VARCHAR(15),
+
+                                             ->     Credits INT,
+                                             ->     FOREIGN KEY (Dpt_Id) REFERENCES department(Dpt_Id)
+                                             -> );
+
+CREATE TABLE lectures (
+                                             ->     Course_Code VARCHAR(15),
+
+                                             ->     Lecture_Id VARCHAR(15),
+                                             ->     FOREIGN KEY (Course_Code) REFERENCES course(Course_Code),
+                                             ->     FOREIGN KEY (Lecture_Id) REFERENCES lecturer(Lecture_Id)
+                                             -> );
+
+CREATE TABLE enroll (
+                                             ->     Course_Code VARCHAR(15),
+
+                                             ->     RegNo VARCHAR(15),
+                                             ->     FOREIGN KEY (Course_Code) REFERENCES course(Course_Code),
+                                             ->     FOREIGN KEY (RegNo) REFERENCES student(RegNo)
+                                             -> );
+
+CREATE TABLE marks (
+                                             ->     Mark_Id VARCHAR(15) PRIMARY KEY,
+                                             ->     RegNo VARCHAR(15),
+                                             ->     Course_Code VARCHAR(15),
+
+                                             ->     First_Quiz_Marks DECIMAL(5,2),
+                                             ->     Second_Quiz_Marks DECIMAL(5,2),
+                                             ->     Third_Quiz_Marks DECIMAL(5,2),
+                                             ->     First_Assignment_Marks DECIMAL(5,2),
+                                             ->     Second_Assignment_Marks DECIMAL(5,2),
+                                             ->     Mid_Exam_Marks DECIMAL(5,2),
+                                             ->     End_Exam_Marks DECIMAL(5,2),
+                                             ->     FOREIGN KEY (RegNo) REFERENCES student(RegNo),
+                                             ->     FOREIGN KEY (Course_Code) REFERENCES course(Course_Code)
+                                             -> );
+
+CREATE TABLE result (
+                                             ->     RegNo VARCHAR(15),
+                                             ->     Course_Code VARCHAR(15),
+
+                                             ->     GPA DECIMAL(3,2),
+                                             ->     Grade CHAR(2),
+                                             ->     FOREIGN KEY (RegNo) REFERENCES student(RegNo),
+                                             ->     FOREIGN KEY (Course_Code) REFERENCES course(Course_Code)
+                                             -> );
+
+CREATE TABLE attendance (
+                                             ->     RegNo VARCHAR(15),
+                                             ->     Course_Code VARCHAR(15),
+
+                                             ->     Date DATE,
+                                             ->     State VARCHAR(10),
+                                             ->     FOREIGN KEY (RegNo) REFERENCES student(RegNo),
+                                             ->     FOREIGN KEY (Course_Code) REFERENCES course(Course_Code)
+                                             -> );
+
+ALTER TABLE attendance MODIFY State ENUM('present','absent','medical');
+
+CREATE TABLE medical (
+                                             ->     RegNo VARCHAR(15),
+                                             ->     Status VARCHAR(50),
+                                             ->     Description VARCHAR(100),
+                                             ->     Start_Date DATE,
+                                             ->     End_Date DATE,
+                                             ->     FOREIGN KEY (RegNo) REFERENCES student(RegNo)
+                                             -> );
+
